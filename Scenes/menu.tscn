@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://n3x1875cd8qq"]
+
+[ext_resource type="Texture2D" uid="uid://0lit6jnmis46" path="res://Tilesets/background line.png" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://dgs828u133cmb" path="res://Scenes/menu.gd" id="1_xhh6f"]
+[ext_resource type="FontFile" uid="uid://bwlxvl50waf2o" path="res://Fonts/Montserrat-BlackItalic.ttf" id="3_158mb"]
+[ext_resource type="Script" uid="uid://ga01icaw4wdp" path="res://Scenes/bt.gd" id="4_158mb"]
+[ext_resource type="Script" uid="uid://ck8gi1v1qado7" path="res://Scenes/bt3.gd" id="5_wwsa2"]
+
+[sub_resource type="Animation" id="Animation_1rerr"]
+resource_name = "RESET"
+length = 3.0333333
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.21568628, -0.25, 0, 0.25, 0, 1, -0.16666667, -0.13071896, 0, 0),
+"times": PackedFloat32Array(0, 3.0333333)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.84313726, -0.25, 0, 0.25, 0, 0.6071326, -0.16666667, 0.03933411, 0, 0),
+"times": PackedFloat32Array(0, 3.0333333)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.9198171, -0.16666667, 0.013363819, 0, 0),
+"times": PackedFloat32Array(0, 3.0333333)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xhh6f"]
+_data = {
+&"RESET": SubResource("Animation_1rerr")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsrd8"]
+bg_color = Color(0.99999934, 0.5209112, 0.82340044, 1)
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.99999934, 0.29460296, 0.83336145, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.3254902)
+shadow_size = 10
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbdvm"]
+bg_color = Color(1, 0.6437348, 0.8596954, 1)
+border_color = Color(1, 0.49173802, 0.85822403, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0)
+shadow_size = 10
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3rjx"]
+bg_color = Color(1, 0.6437348, 0.8596954, 1)
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(1, 0.49173802, 0.85822403, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.3254902)
+shadow_size = 10
+shadow_offset = Vector2(5, 5)
+
+[node name="menu" type="Node2D" unique_id=651688690]
+script = ExtResource("1_xhh6f")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=730045826]
+offset_left = -729.0
+offset_top = -422.0
+offset_right = 1896.0
+offset_bottom = 1059.0
+color = Color(0.21568628, 0.84313726, 1, 1)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1418423788]
+repeat_size = Vector2(2685, 1624)
+autoscroll = Vector2(-100, -100)
+repeat_times = 2
+
+[node name="BackgroundLine" type="Sprite2D" parent="Parallax2D" unique_id=378482139]
+position = Vector2(577, 310)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_1rerr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2014345450]
+libraries/ = SubResource("AnimationLibrary_xhh6f")
+
+[node name="Label" type="Label" parent="." unique_id=483325186]
+offset_left = 55.0
+offset_top = 56.0
+offset_right = 1108.0
+offset_bottom = 252.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7058824)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("3_158mb")
+theme_override_font_sizes/font_size = 160
+text = "Physics Box"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=689233714]
+
+[node name="Button2" type="Button" parent="." unique_id=717985300]
+offset_left = 341.0
+offset_top = 463.0
+offset_right = 730.0
+offset_bottom = 568.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.669)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_158mb")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_jsrd8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wbdvm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q3rjx")
+text = "Exit"
+script = ExtResource("5_wwsa2")
+
+[node name="Button" type="Button" parent="." unique_id=1290043877]
+offset_left = 339.0
+offset_top = 337.0
+offset_right = 728.0
+offset_bottom = 441.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.669)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_158mb")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_jsrd8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wbdvm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q3rjx")
+text = "Start"
+script = ExtResource("4_158mb")
+
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://d6visgpjs55y"]
+
+[ext_resource type="Texture2D" uid="uid://d1w1o86klkc5u" path="res://Tilesets/transition.png" id="1_crfs3"]
+[ext_resource type="Script" uid="uid://byo8ogl0fhf86" path="res://Scenes/scene_transition.gd" id="1_vin40"]
+[ext_resource type="AudioStream" uid="uid://ckgjx0nwx1gji" path="res://Fonts/Gentle_whoosh_of_a_l_#2-1793518434358.wav" id="3_8sxkv"]
+
+[sub_resource type="Animation" id="Animation_8sxkv"]
+resource_name = "RESET"
+length = 0.00999999999999999
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(-1245, -0.005, 0, 0.005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0, -0.005, 0, 0.005, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_sd3nk"]
+resource_name = "dissolve"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(-1234, 0, 0, 0.083333336, 206.16667, 3, -0.083333336, -193, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(-6, 0, 0, 0.083333336, 1, 0, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6nemr"]
+_data = {
+&"RESET": SubResource("Animation_8sxkv"),
+&"dissolve": SubResource("Animation_sd3nk")
+}
+
+[node name="Scene_Transition" type="CanvasLayer" unique_id=1374643433]
+script = ExtResource("1_vin40")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=184865122]
+libraries/ = SubResource("AnimationLibrary_6nemr")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1451960263]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1245.0
+offset_right = -1105.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_crfs3")
+expand_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=178383879]
+stream = ExtResource("3_8sxkv")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1465826766]

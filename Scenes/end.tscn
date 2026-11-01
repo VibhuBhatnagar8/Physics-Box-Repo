@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://bpk7mij2v82au"]
+
+[ext_resource type="FontFile" uid="uid://bwlxvl50waf2o" path="res://Fonts/Montserrat-BlackItalic.ttf" id="1_5j2cu"]
+[ext_resource type="Texture2D" uid="uid://0lit6jnmis46" path="res://Tilesets/background line.png" id="1_xmt8n"]
+[ext_resource type="Script" uid="uid://1v4qeq246dy7" path="res://Scenes/button.gd" id="3_02kpm"]
+[ext_resource type="Script" uid="uid://bgtsrckntb2xq" path="res://Scenes/button_2.gd" id="4_ql4ve"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7364f"]
+bg_color = Color(1, 0.8472311, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ql4ve"]
+bg_color = Color(0.99999934, 0.5209112, 0.82340044, 1)
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.99999934, 0.29460296, 0.83336145, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.940525, 0.61055017, 0, 0.651)
+shadow_size = 10
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5l5q"]
+bg_color = Color(1, 0.6437348, 0.8596954, 1)
+border_color = Color(1, 0.49173802, 0.85822403, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.940525, 0.61055017, 0, 0.651)
+shadow_size = 10
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ku4v"]
+bg_color = Color(1, 0.6437348, 0.8596954, 1)
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(1, 0.49173802, 0.85822403, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.940525, 0.61055017, 0, 0.651)
+shadow_size = 10
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="Environment" id="Environment_xmt8n"]
+background_mode = 3
+tonemap_mode = 1
+glow_enabled = true
+glow_bloom = 0.2
+
+[node name="end" type="Node2D" unique_id=441444175]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1644460615]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1161210536]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7364f")
+
+[node name="Parallax2D" type="Parallax2D" parent="CanvasLayer/Panel" unique_id=1272199566]
+repeat_size = Vector2(0, 1624)
+autoscroll = Vector2(0, -100)
+
+[node name="BackgroundLine" type="Sprite2D" parent="CanvasLayer/Panel/Parallax2D" unique_id=1823362220]
+position = Vector2(577, 310)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_xmt8n")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel" unique_id=893265913]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 120.0
+offset_right = 1042.0
+offset_bottom = 304.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7058824)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("1_5j2cu")
+theme_override_font_sizes/font_size = 150
+text = "YOU  WIN"
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel" unique_id=254493889]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 342.0
+offset_right = 694.0
+offset_bottom = 411.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.669)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("1_5j2cu")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ql4ve")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_q5l5q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ku4v")
+text = "Menu"
+script = ExtResource("3_02kpm")
+
+[node name="Button2" type="Button" parent="CanvasLayer/Panel" unique_id=730011402]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 442.0
+offset_right = 696.0
+offset_bottom = 511.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.669)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("1_5j2cu")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ql4ve")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_q5l5q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ku4v")
+text = "Exit"
+script = ExtResource("4_ql4ve")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1082804527]
+rotation = -1.0037618
+energy = 0.2
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2082521031]
+environment = SubResource("Environment_xmt8n")
+
+[connection signal="pressed" from="CanvasLayer/Panel/Button" to="CanvasLayer/Panel/Button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/Button2" to="CanvasLayer/Panel/Button2" method="_on_pressed"]

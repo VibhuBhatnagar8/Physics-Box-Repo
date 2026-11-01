@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bwjugngvly2e2"]
+
+[ext_resource type="AudioStream" uid="uid://di65qtw7i3b4w" path="res://Scenes/bg music calm.wav" id="1_fbmny"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1969598805]
+stream = ExtResource("1_fbmny")
+autoplay = true
