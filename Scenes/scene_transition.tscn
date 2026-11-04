@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d6visgpjs55y"]
 
 [ext_resource type="Texture2D" uid="uid://d1w1o86klkc5u" path="res://Tilesets/transition.png" id="1_crfs3"]
-[ext_resource type="Script" uid="uid://byo8ogl0fhf86" path="res://Scenes/scene_transition.gd" id="1_vin40"]
+[ext_resource type="Script" uid="uid://byo8ogl0fhf86" path="res://Scripts/scene_transition.gd" id="1_vin40"]
 [ext_resource type="AudioStream" uid="uid://ckgjx0nwx1gji" path="res://Fonts/Gentle_whoosh_of_a_l_#2-1793518434358.wav" id="3_8sxkv"]
 
 [sub_resource type="Animation" id="Animation_8sxkv"]
@@ -15,7 +15,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(2),
-"points": PackedFloat32Array(-1245, -0.005, 0, 0.005, 0),
+"points": PackedFloat32Array(-1316, -0.005, 0, 0.005, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
@@ -40,7 +40,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(-1234, 0, 0, 0.083333336, 206.16667, 3, -0.083333336, -193, 0, 0),
+"points": PackedFloat32Array(-1309, 0, 0, 0.16666667, 218.66667, 3, -0.083333336, -193, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/1/type = "bezier"
@@ -51,7 +51,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(2, 0),
-"points": PackedFloat32Array(-6, 0, 0, 0.083333336, 1, 0, -0.083333336, 0, 0, 0),
+"points": PackedFloat32Array(-6, 0, 0, 0.16666667, 1, 0, -0.083333336, 0, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
 
@@ -71,8 +71,8 @@ libraries/ = SubResource("AnimationLibrary_6nemr")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1245.0
-offset_right = -1105.0
+offset_left = -1316.0
+offset_right = -1123.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2

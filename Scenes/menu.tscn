@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://n3x1875cd8qq"]
 
 [ext_resource type="Texture2D" uid="uid://0lit6jnmis46" path="res://Tilesets/background line.png" id="1_1rerr"]
-[ext_resource type="Script" uid="uid://dgs828u133cmb" path="res://Scenes/menu.gd" id="1_xhh6f"]
+[ext_resource type="Script" uid="uid://dgs828u133cmb" path="res://Scripts/menu.gd" id="1_xhh6f"]
 [ext_resource type="FontFile" uid="uid://bwlxvl50waf2o" path="res://Fonts/Montserrat-BlackItalic.ttf" id="3_158mb"]
-[ext_resource type="Script" uid="uid://ga01icaw4wdp" path="res://Scenes/bt.gd" id="4_158mb"]
-[ext_resource type="Script" uid="uid://ck8gi1v1qado7" path="res://Scenes/bt3.gd" id="5_wwsa2"]
+[ext_resource type="Script" uid="uid://ga01icaw4wdp" path="res://Scripts/bt.gd" id="4_158mb"]
+[ext_resource type="Script" uid="uid://ck8gi1v1qado7" path="res://Scripts/bt3.gd" id="5_wwsa2"]
 
 [sub_resource type="Animation" id="Animation_1rerr"]
 resource_name = "RESET"

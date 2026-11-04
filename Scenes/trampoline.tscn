@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c0y0g3r5cs2su"]
+
+[ext_resource type="Script" uid="uid://40rlrb3j7v2r" path="res://Scripts/trampoline.gd" id="1_m4s3s"]
+[ext_resource type="Texture2D" uid="uid://csks17ili8rv1" path="res://Tilesets/trampolinebase.png" id="2_cds2q"]
+[ext_resource type="Texture2D" uid="uid://bfq06t6d8mh11" path="res://Tilesets/trampoline.png" id="2_tm52h"]
+[ext_resource type="AudioStream" uid="uid://ccwmaqf161xta" path="res://Tilesets/trampoline.wav" id="4_udplr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6imj"]
+size = Vector2(335, 63)
+
+[node name="Trampoline" type="Area2D" unique_id=2124068473]
+script = ExtResource("1_m4s3s")
+
+[node name="Trampolinebase" type="Sprite2D" parent="." unique_id=75812384]
+position = Vector2(33, 7)
+texture = ExtResource("2_cds2q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1586603930]
+position = Vector2(32.5, -22)
+scale = Vector2(1.2929688, 1.2109375)
+texture = ExtResource("2_tm52h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=295282822]
+position = Vector2(30, 28)
+shape = SubResource("RectangleShape2D_t6imj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1095101716]
+stream = ExtResource("4_udplr")

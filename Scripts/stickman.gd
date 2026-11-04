@@ -102,7 +102,7 @@ func _physics_process(delta: float) -> void:
 					push_buffer = 0.15
 					# Replace apply_central_impulse with this:
 					collider.linear_velocity.x = direction * (top_speed * 0.7)
-					collider.linear_velocity.x = clamp(collider.linear_velocity.x, -top_speed, top_speed)
+					collider.linear_velocity.x = clamp(collider.linear_velocity.x/ collider.mass, -top_speed, top_speed)
 
 	# 2. Manual Pulling (Holding grab key)
 	if Input.is_action_pressed("grab"):

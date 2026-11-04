@@ -2,8 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://bwlxvl50waf2o" path="res://Fonts/Montserrat-BlackItalic.ttf" id="1_5j2cu"]
 [ext_resource type="Texture2D" uid="uid://0lit6jnmis46" path="res://Tilesets/background line.png" id="1_xmt8n"]
-[ext_resource type="Script" uid="uid://1v4qeq246dy7" path="res://Scenes/button.gd" id="3_02kpm"]
-[ext_resource type="Script" uid="uid://bgtsrckntb2xq" path="res://Scenes/button_2.gd" id="4_ql4ve"]
+[ext_resource type="Script" uid="uid://1v4qeq246dy7" path="res://Scripts/button.gd" id="3_02kpm"]
+[ext_resource type="Script" uid="uid://bgtsrckntb2xq" path="res://Scripts/button_2.gd" id="4_ql4ve"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7364f"]
 bg_color = Color(1, 0.8472311, 0, 1)

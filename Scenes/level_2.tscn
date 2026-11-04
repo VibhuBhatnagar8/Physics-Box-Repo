@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://dl0wcu48bukur"]
 
 [ext_resource type="Texture2D" uid="uid://0lit6jnmis46" path="res://Tilesets/background line.png" id="1_12fag"]
-[ext_resource type="Script" uid="uid://dn46p5eiply4f" path="res://Scenes/level_2.gd" id="1_ait6c"]
+[ext_resource type="Script" uid="uid://dn46p5eiply4f" path="res://Scripts/level_2.gd" id="1_ait6c"]
 [ext_resource type="Texture2D" uid="uid://mbv8be1hm5o" path="res://Tilesets/doorway.png" id="2_1q6tm"]
 [ext_resource type="Texture2D" uid="uid://1ewpov0hisb0" path="res://Tilesets/Tileset.png" id="3_v36qu"]
 [ext_resource type="PackedScene" uid="uid://p15scy1qpxym" path="res://Scenes/stickman.tscn" id="4_1q6tm"]
 [ext_resource type="PackedScene" uid="uid://bk1hhhx2a2uks" path="res://Scenes/box.tscn" id="5_v36qu"]
 [ext_resource type="FontFile" uid="uid://bwlxvl50waf2o" path="res://Fonts/Montserrat-BlackItalic.ttf" id="6_cggpd"]
-[ext_resource type="Script" uid="uid://c6ib0bnd7wxfo" path="res://Scenes/c.gd" id="7_ait6c"]
+[ext_resource type="Script" uid="uid://c6ib0bnd7wxfo" path="res://Scripts/c.gd" id="7_ait6c"]
 [ext_resource type="PackedScene" uid="uid://ctmrv1ccr6ts5" path="res://Scenes/coin.tscn" id="9_uhnj4"]
-[ext_resource type="Script" uid="uid://c270hhkn2rrbw" path="res://Scenes/a.gd" id="9_vcilj"]
-[ext_resource type="Script" uid="uid://6gvhqf07gjsh" path="res://Scenes/area_2d_2.gd" id="10_42uki"]
-[ext_resource type="Script" uid="uid://ekwnb17dvqe3" path="res://Scenes/scorelabel.gd" id="11_t7v2y"]
+[ext_resource type="Script" uid="uid://c270hhkn2rrbw" path="res://Scripts/a.gd" id="9_vcilj"]
+[ext_resource type="Script" uid="uid://6gvhqf07gjsh" path="res://Scripts/area_2d_2.gd" id="10_42uki"]
+[ext_resource type="Script" uid="uid://ekwnb17dvqe3" path="res://Scripts/scorelabel.gd" id="11_t7v2y"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8gbba"]
 polygon = PackedVector2Array(-56, 64, -56, -56, 64, -56, 64, 64)
@@ -1438,8 +1438,8 @@ _data = {
 &"RESET": SubResource("Animation_hptm8")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhnj4"]
-size = Vector2(18.204819, 982.65857)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ait6c"]
+normal = Vector2(0.012539612, 0.9999213)
 
 [sub_resource type="Environment" id="Environment_2mgoq"]
 background_mode = 3
@@ -1534,14 +1534,17 @@ layer_0/tile_data = PackedInt32Array(458749, 196609, 536870915, 458750, 196609, 
 
 [node name="RigidBody2D" parent="." unique_id=6806309 instance=ExtResource("5_v36qu")]
 position = Vector2(1023, 530)
+mass = 2.0
 lock_rotation = false
 
 [node name="RigidBody2D2" parent="." unique_id=1873756309 instance=ExtResource("5_v36qu")]
 position = Vector2(757, 527)
+mass = 2.0
 lock_rotation = false
 
 [node name="RigidBody2D3" parent="." unique_id=1519980621 instance=ExtResource("5_v36qu")]
 position = Vector2(494, 522)
+mass = 2.0
 lock_rotation = false
 
 [node name="Stickman" parent="." unique_id=1832593421 instance=ExtResource("4_1q6tm")]
@@ -1576,10 +1579,10 @@ position = Vector2(-244, 484)
 script = ExtResource("9_vcilj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=607104084]
-position = Vector2(18.598083, -209.6062)
-rotation = -0.0032693548
+position = Vector2(181, -198)
+rotation = 4.723274
 scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_uhnj4")
+shape = SubResource("WorldBoundaryShape2D_ait6c")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=833830860]
 environment = SubResource("Environment_2mgoq")

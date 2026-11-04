@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://bemxcy7neirwx"]
 
-[ext_resource type="Script" uid="uid://b8fgu8f6m8wsa" path="res://Scenes/level_3.gd" id="1_5rvg2"]
+[ext_resource type="Script" uid="uid://b8fgu8f6m8wsa" path="res://Scripts/level_3.gd" id="1_5rvg2"]
 [ext_resource type="Texture2D" uid="uid://0lit6jnmis46" path="res://Tilesets/background line.png" id="1_qf6rc"]
 [ext_resource type="Texture2D" uid="uid://mbv8be1hm5o" path="res://Tilesets/doorway.png" id="2_53xsp"]
 [ext_resource type="Texture2D" uid="uid://1ewpov0hisb0" path="res://Tilesets/Tileset.png" id="3_5e78q"]
 [ext_resource type="PackedScene" uid="uid://p15scy1qpxym" path="res://Scenes/stickman.tscn" id="4_l4wr6"]
 [ext_resource type="Script" uid="uid://ckna7oaepyfff" path="res://Scenes/camera_2d.gd" id="5_5rvg2"]
-[ext_resource type="Script" uid="uid://u4tajsuo04mb" path="res://Scenes/area_2d.gd" id="6_jtv8s"]
-[ext_resource type="Script" uid="uid://ekwnb17dvqe3" path="res://Scenes/scorelabel.gd" id="7_5e78q"]
+[ext_resource type="Script" uid="uid://ekwnb17dvqe3" path="res://Scripts/scorelabel.gd" id="7_5e78q"]
+[ext_resource type="Script" uid="uid://dqjouwynne5cg" path="res://Scenes/area_2.gd" id="7_jtv8s"]
 [ext_resource type="FontFile" uid="uid://bwlxvl50waf2o" path="res://Fonts/Montserrat-BlackItalic.ttf" id="8_l4wr6"]
 [ext_resource type="PackedScene" uid="uid://ce6jmq65vh17q" path="res://Scenes/gravcoin.tscn" id="9_l4wr6"]
-[ext_resource type="Script" uid="uid://b652xcwp5lg60" path="res://Scenes/b.gd" id="11_jtv8s"]
+[ext_resource type="Script" uid="uid://b652xcwp5lg60" path="res://Scripts/b.gd" id="11_jtv8s"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8gbba"]
 polygon = PackedVector2Array(-56, 64, -56, -56, 64, -56, 64, 64)
@@ -27,7 +27,7 @@ polygon = PackedVector2Array(-64, 64, -64, -56, 64, -56, 64, 64)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6bp64"]
 polygon = PackedVector2Array(-64, 64, -64, -56, 64, -56, 64, 64)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c81s1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jtv8s"]
 texture = ExtResource("3_5e78q")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -1405,7 +1405,7 @@ texture_region_size = Vector2i(128, 128)
 tile_size = Vector2i(128, 128)
 occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_c81s1")
+sources/1 = SubResource("TileSetAtlasSource_jtv8s")
 
 [sub_resource type="Animation" id="Animation_hptm8"]
 resource_name = "RESET"
@@ -1437,8 +1437,7 @@ _data = {
 &"RESET": SubResource("Animation_hptm8")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjeco"]
-size = Vector2(18.204819, 982.65857)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wk15n"]
 
 [sub_resource type="Environment" id="Environment_j77fg"]
 background_mode = 3
@@ -1572,13 +1571,13 @@ autoplay = &"RESET"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1017813092]
 position = Vector2(-244, 484)
-script = ExtResource("6_jtv8s")
+script = ExtResource("7_jtv8s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1909021653]
 position = Vector2(18.598083, -209.6062)
-rotation = -0.0032693548
+rotation = -1.5706825
 scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_xjeco")
+shape = SubResource("WorldBoundaryShape2D_wk15n")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1642588245]
 environment = SubResource("Environment_j77fg")

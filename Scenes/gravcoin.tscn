@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ce6jmq65vh17q"]
 
-[ext_resource type="Script" uid="uid://bnm0vkbekc6vi" path="res://Scenes/gravcoin.gd" id="1_7jlk4"]
+[ext_resource type="Script" uid="uid://bnm0vkbekc6vi" path="res://Scripts/gravcoin.gd" id="1_7jlk4"]
 [ext_resource type="Texture2D" uid="uid://djfyc744u0ohv" path="res://Animation/coin.png" id="2_g4m23"]
 [ext_resource type="AudioStream" uid="uid://ce24snm7vsxim" path="res://Fonts/Soft,_shimmering_chi_#2-1793481744011.wav" id="3_mwf0c"]
 
