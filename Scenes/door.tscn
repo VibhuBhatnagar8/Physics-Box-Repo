@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://04symjb45f4l"]
+
+[ext_resource type="Texture2D" uid="uid://dfw3ohlu3evgg" path="res://Tilesets/glassed.png" id="1_w6aom"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7364f"]
+size = Vector2(64, 256)
+
+[node name="RigidBody2D" type="StaticBody2D" unique_id=1616222929]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1775342854]
+scale = Vector2(1, 1.5)
+texture = ExtResource("1_w6aom")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1047577167]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=730696973]
+scale = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_7364f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=963987788]
+scale = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_7364f")

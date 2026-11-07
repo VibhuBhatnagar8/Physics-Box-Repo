@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c860ekboumbbj"]
+
+[ext_resource type="Texture2D" uid="uid://cuv6477qa5eqw" path="res://Tilesets/Box.png" id="1_6fkgr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jjvhh"]
+friction = 0.5
+rough = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7364f"]
+size = Vector2(255, 254)
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=6806309]
+physics_material_override = SubResource("PhysicsMaterial_jjvhh")
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=845895410]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_6fkgr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1119656068 groups=["boxes"]]
+position = Vector2(-0.5, 0)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_7364f")

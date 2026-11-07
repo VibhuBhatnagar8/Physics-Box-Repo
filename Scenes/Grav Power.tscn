@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://b5v3pdj6plftd"]
+
+[ext_resource type="Texture2D" uid="uid://4ikx5st7e5oc" path="res://Grav up.png" id="1_b0j28"]
+[ext_resource type="Script" uid="uid://df3j5kysw87vf" path="res://Scenes/grav_power.gd" id="1_hh5xk"]
+[ext_resource type="Texture2D" uid="uid://djfyc744u0ohv" path="res://Animation/coin.png" id="2_1ovfc"]
+[ext_resource type="AudioStream" uid="uid://ce24snm7vsxim" path="res://Fonts/Soft,_shimmering_chi_#2-1793481744011.wav" id="3_hh5xk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r4pg8"]
+radius = 52.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2b47n"]
+particle_flag_disable_z = true
+direction = Vector3(1, -1, 0)
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 300, 0)
+scale_min = 0.049999997
+scale_max = 0.099999994
+
+[sub_resource type="Animation" id="Animation_jgi06"]
+resource_name = "RESET"
+length = 2.0333333
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(50, -0.25, 0, 0.25, 0, -50, -0.16666667, 16.666668, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pnqc3"]
+_data = {
+&"RESET": SubResource("Animation_jgi06")
+}
+
+[sub_resource type="Curve" id="Curve_xtp4u"]
+_data = [Vector2(0, 0.06741583), 0.0, 0.0, 0, 0, Vector2(0.695946, 0.9887641), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_t6imj"]
+curve = SubResource("Curve_xtp4u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_23x4t"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 16.0
+emission_ring_radius = 55.29
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+orbit_velocity_min = 0.3000001
+orbit_velocity_max = 0.5000001
+gravity = Vector3(0, 0, 0)
+scale_min = 0.049999997
+scale_max = 0.06
+scale_curve = SubResource("CurveTexture_t6imj")
+
+[node name="Grav" type="Node2D" unique_id=109432705]
+script = ExtResource("1_hh5xk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=146707361]
+position = Vector2(0, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2079028812]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_r4pg8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=183354108]
+modulate = Color(0.6830757, 1.5720325, 1.5720325, 1)
+position = Vector2(0, 72)
+scale = Vector2(0.712927, 0.712927)
+texture = ExtResource("1_b0j28")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1330111854]
+modulate = Color(0, 2.218046, 2.5032542, 1)
+emitting = false
+amount = 10
+texture = ExtResource("2_1ovfc")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_2b47n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=519648023]
+libraries/ = SubResource("AnimationLibrary_pnqc3")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="." unique_id=1924657347]
+modulate = Color(0, 1.353256, 1.353256, 1)
+position = Vector2(-1, 51)
+amount = 15
+texture = ExtResource("2_1ovfc")
+lifetime = 0.8
+process_material = SubResource("ParticleProcessMaterial_23x4t")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1206683558]
+stream = ExtResource("3_hh5xk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

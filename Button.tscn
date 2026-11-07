@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cs3mcvbl75ulm"]
+
+[ext_resource type="Script" uid="uid://rusrwou2qbic" path="res://button.gd" id="1_0kkfq"]
+[ext_resource type="Texture2D" uid="uid://hrg52yioc1dv" path="res://Tilesets/button top 2.png" id="1_lc4xp"]
+[ext_resource type="Texture2D" uid="uid://crk5q4a7td1ve" path="res://Tilesets/button bottom - 2.png" id="2_0kkfq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3reg2"]
+radius = 12.995662
+height = 125.9954
+
+[node name="Area2D" type="Area2D" unique_id=1506571481]
+script = ExtResource("1_0kkfq")
+
+[node name="Button" type="Sprite2D" parent="." unique_id=310415111]
+position = Vector2(8, -98)
+scale = Vector2(1.105, 1.2733333)
+texture = ExtResource("1_lc4xp")
+
+[node name="ButtonBottom" type="Sprite2D" parent="." unique_id=2108105995]
+position = Vector2(11, -89)
+scale = Vector2(1.105, 1.0733334)
+texture = ExtResource("2_0kkfq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004274608]
+position = Vector2(3.7252903e-09, -25)
+rotation = 1.5729505
+shape = SubResource("CapsuleShape2D_3reg2")

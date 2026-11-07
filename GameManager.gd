@@ -11,3 +11,5 @@ func add_score():
 func flip():
 	x = not x
 	score = score + 1
+func flippy():
+	x = not x
