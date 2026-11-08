@@ -18,6 +18,7 @@ func _physics_process(delta: float) -> void:
 			if c == 1:
 				$AnimationPlayer2.play("RESET")
 		if Input.is_action_just_pressed("reset"):
+			GameManager.x = false
 			SceneTransition.change_scene("res://Scenes/level_5.tscn")
 			GameManager.score = 9
 			

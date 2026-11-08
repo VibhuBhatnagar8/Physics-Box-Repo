@@ -1609,8 +1609,9 @@ move_duration = 0.5
 [node name="Grav" parent="." unique_id=109432705 instance=ExtResource("6_sn477")]
 position = Vector2(1416, 24)
 
-[node name="Grav2" parent="." unique_id=105021298 instance=ExtResource("6_sn477")]
-position = Vector2(1416, 24)
+[node name="Grav2" parent="." unique_id=201472819 instance=ExtResource("6_sn477")]
+position = Vector2(3342, -847)
+rotation = 3.1415927
 
 [node name="RigidBody2D6" parent="." unique_id=1616222929 instance=ExtResource("12_68k2k")]
 position = Vector2(2882, -701)
@@ -1677,7 +1678,6 @@ rotation = -3.1346698
 
 [node name="RigidBody2D8" parent="." unique_id=1793804623 instance=ExtResource("10_r8l1h")]
 position = Vector2(163, -1020)
-lock_rotation = false
 
 [node name="Area2D" parent="." unique_id=1006598631 instance=ExtResource("8_02esc")]
 position = Vector2(-189, 781)

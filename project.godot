@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Physics Game"
-run/main_scene="uid://n3x1875cd8qq"
+run/main_scene="uid://c57r5bvl1xrnn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://cuv6477qa5eqw"
 
